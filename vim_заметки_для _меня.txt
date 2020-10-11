@@ -10,6 +10,40 @@ set tabstop=4 expandtab
 set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕHГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
 
 set autoindent
+
+------------------------------------------------------
+для python
+--------------------------------------------------------
+set number
+
+"Включаем распознавание типов файлов и типо-специфичные плагины:
+filetype on
+filetype plugin on
+
+"Настройки табов для Python, согласно рекоммендациям
+set tabstop=4
+set shiftwidth=4
+set smarttab
+set expandtab "Ставим табы пробелами
+set softtabstop=4 "4 пробела в табе
+"Автоотступ
+set autoindent
+"Подсвечиваем все что можно подсвечивать
+let python_highlight_all = 1
+"Включаем 256 цветов в терминале, мы ведь работаем из иксов?
+"Нужно во многих терминалах, например в gnome-terminal
+set t_Co=256
+
+set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕHГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGH     JKL:\\"ZXCVBNM<>
+
+"Перед сохранением вырезаем пробелы на концах (только в .py файлах)
+autocmd BufWritePre *.py normal m`:%s/\s\+$//e ``
+"В .py файлах включаем умные отступы после ключевых слов
+autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+"Колоночка, чтобы показывать плюсики для скрытия блоков кода:
+set foldcolumn=1
+
+
 ---------------------------------------------------------
 == Отступы ==
 [#]>                      сдвинуть выделенное вправо
